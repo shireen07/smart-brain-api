@@ -29,7 +29,7 @@ const knex = require('knex');
 const db = knex({
     client: 'pg', //pg is postgres
     connection: {
-      host : '127.0.0.1',
+      host : 'postgresql-fluffy-87915', //heroku database url
       user : 'shireen',
       password : '1234',
       database : 'smart-brain'
@@ -64,7 +64,7 @@ app.put('/image', (req , res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req , res) => { image.handleApiCall(req, res) })
 
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 5000, () => {
     //function runs right after listen
     console.log(`App is running on port ${process.env.PORT}`);
 }); //using port 3000 to listen

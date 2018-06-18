@@ -29,7 +29,7 @@ const knex = require('knex');
 const db = knex({
     client: 'pg', //pg is postgres
     connection: {
-      host : process.env.DATABASE_URL, //heroku database url
+      connectionString : process.env.DATABASE_URL, //heroku database url
       ssl: true,
     }
   });

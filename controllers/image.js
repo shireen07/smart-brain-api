@@ -3,7 +3,7 @@ const Clarifai = require('clarifai'); //we import to use the private key
 //Add private API key. We add it in the server so that users cannot see it in the Network tab of the broswer.
 //Security concern.
 const app = new Clarifai.App({
-    apiKey: 'dc0f706ef82e40408f9a74401c6be274'
+    apiKey: process.env.API_KEY_CLARIFAI //actual key saved in Heroku config vars
 });
 
 const handleApiCall = (req, res) => {

@@ -45,7 +45,7 @@ app.use(cors());
 
 
 //GET Request
-app.get('/' , (req , res) => { res.send(database.users) });
+app.get('/' , (req , res) => { res.send('Yay! its working..') });
 
 //signin route
 app.post('/signin', (req , res) => { signin.handleSignIn(req, res, db, bcrypt) }); //dependency injection used for knex and bcrypt

@@ -29,10 +29,8 @@ const knex = require('knex');
 const db = knex({
     client: 'pg', //pg is postgres
     connection: {
-      host : 'postgresql-fluffy-87915', //heroku database url
-      user : 'shireen',
-      password : '1234',
-      database : 'smart-brain'
+      host : process.env.DATABASE_URL, //heroku database url
+      ssl: true,
     }
   });
 
